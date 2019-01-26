@@ -24,6 +24,7 @@
       target="_blank"
     >
       GITHUB
+      <i class="icon-social-github" />
     </b-nav-item>
   </b-navbar-nav>
 </template>

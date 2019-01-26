@@ -1,6 +1,11 @@
 @import 'variables/variable';
+
 // Vendor
 @import 'vendor/bootstrap';
 @import 'vendor/markdown';
-// Layour
+
+// Layout
 @import 'layouts/default';
+
+// Pages
+@import 'pages/work';

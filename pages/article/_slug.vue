@@ -44,5 +44,18 @@ export default {
       }
     }
   },
+  head () {
+    return {
+      title        : this.data.title,
+      titleTemplate: '%s · adenov.id',
+      meta         : [
+        {
+          hid    : 'description',
+          name   : 'description',
+          content: this.data.subtitle,
+        },
+      ],
+    }
+  },
 }
 </script>

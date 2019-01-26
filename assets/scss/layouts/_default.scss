@@ -36,7 +36,10 @@ body::after {
 .navbar-light .navbar-nav .nav-link {
   color: $green;
   font-weight: 700;
-  padding: 0.75rem 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    padding: 0.75rem 1.5rem;
+  }
 
   &:hover {
     color: inherit;

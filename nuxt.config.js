@@ -32,6 +32,7 @@ module.exports = {
   css    : [ '@/assets/scss/app.scss' ],
   plugins: [ '@/plugins/disqus' ],
   modules: [
+    '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
     'nuxt-simple-line-icons',
     ['bootstrap-vue/nuxt', { css: false }],

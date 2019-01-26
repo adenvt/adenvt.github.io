@@ -1,0 +1,29 @@
+<template>
+  <b-navbar-nav class="ml-auto">
+    <b-nav-item
+      to="/"
+      exact
+    >
+      HOME
+    </b-nav-item>
+    <b-nav-item
+      to="/work"
+      exact
+    >
+      WORK
+    </b-nav-item>
+    <b-nav-item
+      to="/about"
+      exact
+    >
+      ABOUT
+    </b-nav-item>
+    <b-nav-item
+      href="//github.com/adenvt"
+      exact
+      target="_blank"
+    >
+      GITHUB
+    </b-nav-item>
+  </b-navbar-nav>
+</template>

@@ -11,32 +11,20 @@
         />
       </b-navbar-brand>
 
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item
-          to="/"
-          exact
-        >
-          HOME
-        </b-nav-item>
-        <b-nav-item
-          to="/blog"
-          exact
-        >
-          BLOG
-        </b-nav-item>
-        <b-nav-item
-          to="/work"
-          exact
-        >
-          WORK
-        </b-nav-item>
-        <b-nav-item
-          to="/about"
-          exact
-        >
-          ABOUT
-        </b-nav-item>
-      </b-navbar-nav>
+      <b-navbar-toggle target="navigation" />
+
+      <b-collapse
+        id="navigation"
+        is-nav
+      >
+        <navbar />
+      </b-collapse>
     </b-navbar>
   </header>
 </template>
+
+<script>
+import Navbar from './Navbar'
+
+export default { components: { Navbar } }
+</script>

@@ -1,0 +1,42 @@
+<template>
+  <header>
+    <b-navbar
+      toggleable="md"
+      type="light"
+    >
+      <b-navbar-brand to="/">
+        <b-img
+          height="30"
+          src="~assets/images/logo.svg"
+        />
+      </b-navbar-brand>
+
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item
+          to="/"
+          exact
+        >
+          HOME
+        </b-nav-item>
+        <b-nav-item
+          to="/blog"
+          exact
+        >
+          BLOG
+        </b-nav-item>
+        <b-nav-item
+          to="/work"
+          exact
+        >
+          WORK
+        </b-nav-item>
+        <b-nav-item
+          to="/about"
+          exact
+        >
+          ABOUT
+        </b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
+  </header>
+</template>

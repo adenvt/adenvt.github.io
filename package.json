@@ -1,0 +1,61 @@
+{
+  "name": "adenvt.github.io",
+  "version": "1.0.0",
+  "description": "My terrific Nuxt.js project",
+  "author": "Ade Novid",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:css": "stylelint 'assets/**/*.scss' --syntax scss",
+    "fix": "npm run fix:js && npm run fix:css",
+    "fix:js": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "fix:css": "stylelint 'assets/**/*.scss' --syntax scss --fix"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.3",
+    "@nuxtjs/pwa": "^2.6.0",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "cheerio": "^1.0.0-rc.2",
+    "cross-env": "^5.2.0",
+    "github-markdown-css": "^2.10.0",
+    "lodash": "^4.17.11",
+    "nuxt": "^2.3.4",
+    "nuxt-purgecss": "^0.2.1",
+    "nuxt-simple-line-icons": "^1.0.1",
+    "vue-disqus": "^3.0.5"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^0.0.1",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.12.1",
+    "eslint-config-adenvt": "^2.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jest": ">=21.24.1",
+    "eslint-plugin-markdown": "^1.0.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-unicorn": "^7.1.0",
+    "eslint-plugin-varspacing": "^1.2.1",
+    "eslint-plugin-vue": "^5.1.0",
+    "glob-fs": "^0.1.7",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "pre-commit": "^1.2.2",
+    "sass-loader": "^7.1.0",
+    "stylelint": "^9.9.0",
+    "stylelint-config-sass-guidelines": "^5.3.0",
+    "stylelint-scss": "^3.4.1"
+  }
+}

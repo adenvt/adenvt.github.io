@@ -1,0 +1,164 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  color: $black;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 2;
+
+}
+
+body::after {
+  background-color: $green;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 10px;
+}
+
+::selection {
+  background-color: rgba($green, 0.5);
+}
+
+.container {
+  padding-left: 30px;
+}
+
+.navbar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $green;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Iceberg', cursive;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+a {
+  color: $green;
+
+  &:hover,
+  &:focus {
+    color: darken($green, 20%);
+    text-decoration: none;
+  }
+}
+
+blockquote {
+  border-left: 0.25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+footer {
+  color: rgba($black, 0.5);
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+pre {
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+table {
+  th,
+  td {
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px;
+  }
+
+  tr:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
+}
+
+.content {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.post {
+  &--item {
+    border-bottom: 2px solid $light-grey;
+    padding: 1.25rem 0 0;
+
+    h2 > a {
+      color: inherit;
+
+      &:hover,
+      &:focus {
+        color: $green;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.btn {
+  &-green {
+    @include button-variant($green, $green);
+  }
+}
+
+.paging {
+  margin: 1.5rem 0;
+}
+
+.page {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.2s;
+
+    + .error {
+      display: none;
+    }
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
+.error {
+  > h1 {
+    font-size: 7rem;
+    margin-bottom: 1rem;
+  }
+
+  > p {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -16,7 +16,7 @@ module.exports = {
   overrides: [
     {
       files: ['pages/**/*.vue', 'layouts/**/*.vue'],
-      rules: { 'unicorn/filename-case': ['error', { case: 'camelCase' }] },
+      rules: { 'unicorn/filename-case': ['error', { case: 'kebabCase' }] },
     }
   ]
 }

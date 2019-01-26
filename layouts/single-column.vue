@@ -4,7 +4,7 @@
       <app-header />
 
       <b-row>
-        <b-col md="9">
+        <b-col cols="12">
           <div class="content">
             <nuxt />
           </div>

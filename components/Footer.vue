@@ -5,8 +5,9 @@
         href="https://www.facebook.com/adenvt"
         title="facebook"
         target="_blank"
-        variant="green">
-        <i class="icon-social-facebook"></i>
+        variant="green"
+      >
+        <i class="icon-social-facebook" />
       </b-button>
       <b-button
         href="https://www.github.com/adenvt"
@@ -14,7 +15,7 @@
         title="github"
         target="_blank"
       >
-        <i class="icon-social-github"></i>
+        <i class="icon-social-github" />
       </b-button>
       <b-button
         href="https://www.linkedin.com/in/adenvt/"
@@ -22,14 +23,14 @@
         title="linkedin"
         target="_blank"
       >
-        <i class="icon-social-linkedin"></i>
+        <i class="icon-social-linkedin" />
       </b-button>
       <b-button
         href="mailto://adenvt@gmail.com"
         variant="green"
         title="email"
       >
-        <i class="icon-envelope"></i>
+        <i class="icon-envelope" />
       </b-button>
     </div>
 

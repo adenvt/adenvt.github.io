@@ -3,20 +3,19 @@ const chunk  = require('lodash/chunk')
 const concat = require('lodash/concat')
 const path   = require('path')
 const glob   = require('glob-fs')({ gitignore: true })
-const pkg    = require('./package')
 
 module.exports = {
   mode: 'universal',
   head: {
     htmlAttrs: { lang: 'id' },
-    title    : 'adenov.id',
+    title    : 'Ade Novid · Frontend Web Developer',
     meta     : [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid    : 'description',
         name   : 'description',
-        content: pkg.description,
+        content: 'Frontend Web Developer from Indonesia, specialize on Vue and Laravel framework',
       },
     ],
     link: [

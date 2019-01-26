@@ -2,6 +2,8 @@
 
 > My terrific Nuxt.js project
 
+[![Build Status](https://travis-ci.com/adenvt/adenvt.github.io.svg?branch=publish)](https://travis-ci.com/adenvt/adenvt.github.io)
+
 ## Build Setup
 
 ``` bash

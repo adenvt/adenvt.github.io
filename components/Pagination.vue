@@ -3,6 +3,7 @@
     <b-btn-group>
       <b-btn
         variant="green"
+        name="prev"
         :disabled="value <= 1"
         @click="prev"
       >
@@ -10,6 +11,7 @@
       </b-btn>
       <b-btn
         variant="green"
+        name="next"
         :disabled="value >= total"
         @click="next"
       >

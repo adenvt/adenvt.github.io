@@ -11,7 +11,7 @@
           class="post--item"
         >
           <h2>
-            <b-link :to="`/article/${post.file}`">
+            <b-link :to="`/article/${post.file}/`">
               {{ post.title }}
             </b-link>
           </h2>

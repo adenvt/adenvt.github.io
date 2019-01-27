@@ -8,6 +8,8 @@
         <b-img
           height="30"
           src="~assets/images/logo.svg"
+          alt="adenovid logo"
+          title="adenov.id"
         />
       </b-navbar-brand>
 

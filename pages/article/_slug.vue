@@ -47,7 +47,7 @@ export default {
   head () {
     return {
       title        : this.data.title,
-      titleTemplate: '%s · adenov.id',
+      titleTemplate: '%s · Ade Novid (@adenvt)',
       meta         : [
         {
           hid    : 'description',

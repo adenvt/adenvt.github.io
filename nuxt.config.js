@@ -6,9 +6,10 @@ const glob   = require('glob-fs')({ gitignore: true })
 
 module.exports = {
   mode: 'universal',
+  env : { DOMAIN: process.env.DOMAIN || 'http://adenvt.github.io' },
   head: {
     htmlAttrs: { lang: 'id' },
-    title    : 'Ade Novid · Frontend Web Developer',
+    title    : 'Ade Novid (@adenvt) · Frontend Web Developer',
     meta     : [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

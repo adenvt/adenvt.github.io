@@ -20,5 +20,10 @@
 import AppHeader from '@/components/Header'
 import AppFooter from '@/components/Footer'
 
-export default { components: { AppHeader, AppFooter } }
+export default {
+  components: { AppHeader, AppFooter },
+  head () {
+    return { link: [{ rel: 'canonical', href: `${process.env.DOMAIN}${this.$route.path}` }] }
+  },
+}
 </script>

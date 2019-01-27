@@ -7,19 +7,19 @@
       HOME
     </b-nav-item>
     <b-nav-item
-      to="/work"
+      to="/work/"
       exact
     >
       WORK
     </b-nav-item>
     <b-nav-item
-      to="/about"
+      to="/about/"
       exact
     >
       ABOUT
     </b-nav-item>
     <b-nav-item
-      href="//github.com/adenvt"
+      href="https://github.com/adenvt"
       exact
       target="_blank"
     >

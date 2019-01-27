@@ -23,7 +23,9 @@ import AppFooter from '@/components/Footer'
 export default {
   components: { AppHeader, AppFooter },
   head () {
-    return { link: [{ rel: 'canonical', href: `${process.env.DOMAIN}${this.$route.path}` }] }
+    const canonical = `${process.env.DOMAIN}${this.$route.path}`
+
+    return { link: [{ rel: 'canonical', href: canonical.replace('index.html', '') }] }
   },
 }
 </script>

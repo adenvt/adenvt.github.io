@@ -17,8 +17,7 @@
 </template>
 
 <script>
-import AppHeader from '@/components/Header'
-import AppFooter from '@/components/Footer'
+import BaseLayout from './default'
 
-export default { components: { AppHeader, AppFooter } }
+export default { extends: BaseLayout }
 </script>

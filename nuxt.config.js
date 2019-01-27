@@ -1,8 +1,13 @@
-const map    = require('lodash/map')
-const chunk  = require('lodash/chunk')
-const concat = require('lodash/concat')
-const path   = require('path')
-const glob   = require('glob-fs')({ gitignore: true })
+const map  = require('lodash/map')
+const path = require('path')
+const glob = require('glob-fs')({ gitignore: true })
+
+const files  = glob.readdirSync('./article/*.md')
+const routes = map(files, (file) => {
+  const slug = path.basename(file, '.md')
+
+  return `/article/${slug}/`
+})
 
 module.exports = {
   mode: 'universal',
@@ -33,6 +38,7 @@ module.exports = {
   plugins: [ '@/plugins/disqus' ],
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
     'nuxt-simple-line-icons',
     ['bootstrap-vue/nuxt', { css: false }],
@@ -61,21 +67,10 @@ module.exports = {
   },
   generate: {
     fallback: true,
-    routes () {
-      const files = glob.readdirSync('./article/*.md')
-      const pages = chunk(files, 5)
-
-      const home = map(pages, (page, index) => {
-        return `/?page=${index + 1}`
-      })
-
-      const articles = map(files, (file, index) => {
-        const slug = path.basename(file, '.md')
-
-        return `/article/${slug}`
-      })
-
-      return concat(home, articles)
-    },
+    routes  : routes,
+  },
+  sitemap: {
+    generate: true,
+    routes  : routes,
   },
 }

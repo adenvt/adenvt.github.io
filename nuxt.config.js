@@ -2,6 +2,8 @@ const map  = require('lodash/map')
 const path = require('path')
 const glob = require('glob-fs')({ gitignore: true })
 
+const DOMAIN = process.env.DOMAIN || 'https://adenvt.github.io'
+
 const files  = glob.readdirSync('./article/*.md')
 const routes = map(files, (file) => {
   const slug = path.basename(file, '.md')
@@ -11,7 +13,7 @@ const routes = map(files, (file) => {
 
 module.exports = {
   mode: 'universal',
-  env : { DOMAIN: process.env.DOMAIN || 'http://adenvt.github.io' },
+  env : { DOMAIN: DOMAIN },
   head: {
     htmlAttrs: { lang: 'id' },
     title    : 'Ade Novid (@adenvt) · Frontend Web Developer',
@@ -71,6 +73,7 @@ module.exports = {
   },
   sitemap: {
     generate: true,
+    hostname: DOMAIN,
     routes  : routes,
   },
 }

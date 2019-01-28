@@ -5,6 +5,7 @@ node_js:
 branches:
   only:
   - publish
+  - develop
 
 install:
   - npm ci

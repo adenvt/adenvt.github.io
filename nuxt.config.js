@@ -1,7 +1,6 @@
-const map   = require('lodash/map')
-const path  = require('path')
-const merge = require('webpack-merge')
-const glob  = require('glob-fs')({ gitignore: true })
+const map  = require('lodash/map')
+const path = require('path')
+const glob = require('glob-fs')({ gitignore: true })
 
 const DOMAIN = process.env.DOMAIN || 'https://adenvt.github.io'
 
@@ -73,29 +72,25 @@ module.exports = {
       },
     },
     extend (config) {
-      return merge.smart(config, {
-        module: {
-          rules: [
-            {
-              test: /\.md$/,
-              use : [
-                {
-                  loader : 'html-loader',
-                  options: { minimize: true },
-                },
-                {
-                  loader : '@nuxtjs/markdownit-loader',
-                  options: {
-                    preset : 'default',
-                    linkify: true,
-                    breaks : true,
-                  },
-                },
-              ],
+      config.module.rules.push({
+        test: /\.md$/,
+        use : [
+          {
+            loader : 'html-loader',
+            options: { minimize: true },
+          },
+          {
+            loader : '@nuxtjs/markdownit-loader',
+            options: {
+              preset : 'default',
+              linkify: true,
+              breaks : true,
             },
-          ],
-        },
+          },
+        ],
       })
+
+      return config
     },
   },
   generate: {

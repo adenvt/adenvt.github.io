@@ -2,20 +2,17 @@ language: node_js
 node_js:
   - "8"
 
-cache:
-  directories:
-    - "node_modules"
-
 branches:
   only:
   - publish
+  - develop
 
 install:
-  - npm install
-  - npm run generate
+  - npm ci
 
 script:
   - npm run lint
+  - npm run generate
 
 deploy:
   provider: pages

@@ -1,6 +1,7 @@
-const map  = require('lodash/map')
-const path = require('path')
-const glob = require('glob-fs')({ gitignore: true })
+const map   = require('lodash/map')
+const path  = require('path')
+const merge = require('webpack-merge')
+const glob  = require('glob-fs')({ gitignore: true })
 
 const DOMAIN = process.env.DOMAIN || 'https://adenvt.github.io'
 
@@ -32,7 +33,7 @@ module.exports = {
         type: 'image/x-icon',
         href: '/favicon.ico',
       },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Iceberg|Open+Sans:400,700' },
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Iceberg|Open+Sans:400,700' },
     ],
   },
   loading: { color: '#fff' },
@@ -41,16 +42,21 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    '@nuxtjs/markdownit',
     'nuxt-simple-line-icons',
+    'nuxt-webfontloader',
     ['bootstrap-vue/nuxt', { css: false }],
   ],
-  markdownit: {
-    preset : 'default',
-    linkify: true,
-    breaks : true,
+  manifest: {
+    name            : 'adenov.id',
+    short_name      : 'adenov.id',
+    description     : 'Ade Novid Personal Blog',
+    theme_color     : '#42b883',
+    background_color: '#ffffff',
+    orientation     : 'portrait-primary',
+    lang            : 'id',
   },
-  build: {
+  webfontloader: { google: { families: ['Iceberg', 'Open+Sans:400,700'] } },
+  build        : {
     loaders: {
       vue: {
         transformAssetUrls: {
@@ -65,6 +71,31 @@ module.exports = {
           'img-viewer'      : 'src',
         },
       },
+    },
+    extend (config) {
+      return merge.smart(config, {
+        module: {
+          rules: [
+            {
+              test: /\.md$/,
+              use : [
+                {
+                  loader : 'html-loader',
+                  options: { minimize: true },
+                },
+                {
+                  loader : '@nuxtjs/markdownit-loader',
+                  options: {
+                    preset : 'default',
+                    linkify: true,
+                    breaks : true,
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      })
     },
   },
   generate: {
